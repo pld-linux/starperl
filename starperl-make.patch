@@ -1,0 +1,173 @@
+--- starperl-1.4.218/NDF-1.45/Makefile.PL.orig	2003-11-02 18:06:21.498690992 +0100
++++ starperl-1.4.218/NDF-1.45/Makefile.PL	2003-11-02 18:06:30.531317824 +0100
+@@ -10,7 +10,7 @@
+   print "Could not find Starlink::Config - using /star\n";
+   %StarConfig = (
+                  Star_Inc => '/star/include',
+-                 Star_Lib => '/star/lib',
++                 Star_Share => '/star/share',
+ 		 Star_Bin => '/star/bin',
+                 );
+ }
+@@ -83,7 +83,7 @@
+ $fortranlibs =~ s/-lUfor// if ($osname eq 'dec_osf');
+ 
+ # This is the location of the Starlink NDF libraries
+-$starlibs = "-L$StarConfig{Star_Lib}";
++$starlibs = "-L$StarConfig{Star_Share}";
+ 
+ # Uncomment this if you are explicitly linking with libarrays
+ # $arrays = "-Larrays -larrays";
+--- starperl-1.4.218/Starlink-1.14/EMS/Makefile.PL.orig	2001-08-11 03:48:00.000000000 +0200
++++ starperl-1.4.218/Starlink-1.14/EMS/Makefile.PL	2003-11-02 18:27:01.182230448 +0100
+@@ -10,7 +10,7 @@
+   print "Could not find Starlink::Config - using /star\n";
+   %StarConfig = (
+ 		 Star_Inc => '/star/include',
+-		 Star_Lib => '/star/lib',
++		 Star_Share => '/star/share',
+ 		);
+ }
+ 
+@@ -21,7 +21,7 @@
+ ems_link command is not in your path." if $emslibs !~ /./;
+ 
+ # Libs requires the location of the Starlink libraries 
+-$libs = "-L$StarConfig{Star_Lib} $emslibs ";
++$libs = "-L$StarConfig{Star_Share} $emslibs ";
+ 
+ # Write the makefile....
+ WriteMakefile(
+--- starperl-1.4.218/Starlink-1.14/NBS/Makefile.PL.orig	1999-06-16 05:18:31.000000000 +0200
++++ starperl-1.4.218/Starlink-1.14/NBS/Makefile.PL	2003-11-02 18:27:21.161193184 +0100
+@@ -11,7 +11,7 @@
+   print "Could not find Starlink::Config - using /star\n";
+   %StarConfig = (
+                  Star_Inc => '/star/include',
+-                 Star_Lib => '/star/lib',
++                 Star_Share => '/star/share',
+                 );
+ }
+ 
+@@ -58,7 +58,7 @@
+ $fortranlibs = ExtUtils::F77->runtime;
+ 
+ # This is the location of the Starlink NDF libraries
+-$starlibs = "-L$StarConfig{Star_Lib}";
++$starlibs = "-L$StarConfig{Star_Share}";
+  
+ $libs = "$starlibs $nbslibs $fortranlibs ";
+  
+--- starperl-1.4.218/Starlink-1.14/ADAM/Makefile.PL.orig	2000-07-12 03:49:52.000000000 +0200
++++ starperl-1.4.218/Starlink-1.14/ADAM/Makefile.PL	2003-11-02 18:26:27.993275936 +0100
+@@ -8,7 +8,7 @@
+   print "Could not find Starlink::Config - using /star\n";
+   %StarConfig = (
+                  Star_Inc => '/star/include',
+-                 Star_Lib => '/star/lib',
++                 Star_Share => '/star/share',
+                 );
+ }
+ 
+@@ -57,7 +57,7 @@
+ 
+ 
+ # This is the location of the Starlink NDF libraries
+-$starlibs = "-L$StarConfig{Star_Lib}";
++$starlibs = "-L$StarConfig{Star_Share}";
+ 
+ $libs = "$starlibs $amslibs $fortranlibs";
+ 
+--- starperl-1.4.218/Starlink-1.14/EMS/EMS.xs.orig	2001-08-11 01:02:03.000000000 +0200
++++ starperl-1.4.218/Starlink-1.14/EMS/EMS.xs	2003-11-02 18:53:11.663481008 +0100
+@@ -125,7 +125,7 @@
+  PREINIT:
+   int maxchar;
+  CODE:
+-  Perl_croak("emsFmtc no longer supported. Use sprintf instead\n");
++  croak("emsFmtc no longer supported. Use sprintf instead\n");
+   /* maxchar = EMS__SZTOK;
+      emsFmtc(token, format, value, maxchar);*/
+ 
+@@ -137,7 +137,7 @@
+  ALIAS:
+   Starlink::EMS::ems_fmtd = 2
+  CODE:
+-  Perl_croak("emsFmtd no longer supported. Use sprintf instead\n");
++  croak("emsFmtd no longer supported. Use sprintf instead\n");
+   /* emsFmtd(token, format, value);*/
+ 
+ void
+@@ -148,7 +148,7 @@
+  ALIAS:
+   Starlink::EMS::ems_fmti = 2
+  CODE:
+-  Perl_croak("emsFmti no longer supported. Use sprintf instead\n");
++  croak("emsFmti no longer supported. Use sprintf instead\n");
+   /* emsFmti(token, format, value); */
+ 
+ void
+@@ -159,7 +159,7 @@
+  ALIAS:
+   Starlink::EMS::ems_fmtl= 2
+  CODE:
+-  Perl_croak("emsFmtl no longer supported. Use sprintf instead\n");
++  croak("emsFmtl no longer supported. Use sprintf instead\n");
+   /* emsFmtl(token, format, value);*/
+ 
+ void
+@@ -170,7 +170,7 @@
+  ALIAS:
+   Starlink::EMS::ems_fmtr = 2
+  CODE:
+-  Perl_croak("emsFmtr no longer supported. Use sprintf instead\n");
++  croak("emsFmtr no longer supported. Use sprintf instead\n");
+   /* emsFmtr(token, format, value); */
+ 
+ 
+--- starperl-1.4.218/GSD-1.13/Makefile.PL.orig	2000-05-13 05:04:04.000000000 +0200
++++ starperl-1.4.218/GSD-1.13/Makefile.PL	2003-11-02 20:49:33.067146328 +0100
+@@ -9,7 +9,7 @@
+   print "Could not find Starlink::Config - using /star\n";
+   %StarConfig = (
+                  Star_Inc => '/star/include',
+-                 Star_Lib => '/star/lib',
++                 Star_Share => '/star/share',
+                 );
+ }
+ 
+@@ -29,7 +29,7 @@
+ WriteMakefile(
+     'NAME'      => 'GSD',
+     'VERSION_FROM' => 'GSD.pm',
+-    'LIBS'      => "-L$StarConfig{Star_Lib} -lgsd $libs",
++    'LIBS'      => "-L$StarConfig{Star_Share} -lgsd $libs",
+     'PREREQ_PM' => {
+                               'Test' => undef,
+                              },
+--- starperl-1.4.218/Astro-SLA-0.96/Makefile.PL.orig	2002-09-16 04:19:58.000000000 +0200
++++ starperl-1.4.218/Astro-SLA-0.96/Makefile.PL	2003-11-02 21:17:28.833391136 +0100
+@@ -33,7 +33,7 @@
+     # do not have a Starlink configuration so guess /star
+     %StarConfig = (
+ 		   Star_Inc => '/star/include',
+-		   Star_Lib => '/star/lib',
++		   Star_Share => '/star/share',
+ 		   Star_Bin => '/star/bin',
+ 		  );
+   } else {
+@@ -41,11 +41,11 @@
+   }
+ 
+   # This assumes unix - Starlink only works on unix
+-  my $lib = $StarConfig{Star_Lib} . "/libsla.a";
++  my $lib = $StarConfig{Star_Share} . "/libsla.so";
+ 
+   if (-e $lib) {
+-    print "Located Starlink SLALIB library in $StarConfig{Star_Lib}\n";
+-    $sla_lib = " -L$StarConfig{Star_Lib} -lsla ";
++    print "Located Starlink SLALIB library in $StarConfig{Star_Share}\n";
++    $sla_lib = " -L$StarConfig{Star_Share} -lsla ";
+ 
+     # See if we can find the version
+     eval { require Starlink::Versions; };
