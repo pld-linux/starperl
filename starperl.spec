@@ -7,7 +7,7 @@ Summary:	STARPERL - Starlink Perl modules
 Summary(pl):	STARPERL - modu³y Perla z projektu Starlink
 Name:		starperl
 Version:	1.4.218
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/starperl/starperl.tar.Z
@@ -22,8 +22,8 @@ BuildRequires:	gcc-g77
 BuildRequires:	perl-ExtUtils-F77
 BuildRequires:	perl-PDL
 BuildRequires:	perl-Proc-Simple >= 1.13
-BuildRequires:	perl-devel >= 5.8.0
-BuildRequires:	rpm-perlprov
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sed >= 4.0
 BuildRequires:	starlink-gsd-devel
 BuildRequires:	starlink-img-devel
