@@ -10,7 +10,8 @@ Version:	1.4.218
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/starperl/starperl.tar.Z
+#Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/starperl/starperl.tar.Z
+Source0:	starperl.tar.Z
 # Source0-md5:	33dda278be4474cf737be6a8b702a04a
 Patch0:		%{name}-make.patch
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_STARPERL.html
