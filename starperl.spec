@@ -29,6 +29,7 @@ BuildRequires:	starlink-gsd-devel
 BuildRequires:	starlink-img-devel
 BuildRequires:	starlink-nbs-devel
 BuildRequires:	starlink-ndf-devel
+BuildRequires:	starlink-sae-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		stardir		/usr/lib/star
@@ -102,8 +103,8 @@ Summary:	Starlink Perl modules - interface to Starlink libraries
 Summary(pl):	Modu³y Perla Starlink - interfejs do bibliotek Starlink
 Group:		Development/Languages/Perl
 Version:	%{ver_Starlink}
-Requires:	perl-NDF = %{ver_NDF}
-Requires:	perl-Starlink-Config = %{ver_Config}
+Requires:	perl-NDF = %{ver_NDF}-%{release}
+Requires:	perl-Starlink-Config = %{ver_Config}-%{release}
 
 %description -n perl-Starlink
 The StarPerl package is a selection of Perl modules that provide
