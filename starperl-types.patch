@@ -1,0 +1,30 @@
+--- starperl-1.4.218/NDF-1.45/NDF.xs.orig	2003-03-08 01:42:41.000000000 +0100
++++ starperl-1.4.218/NDF-1.45/NDF.xs	2004-05-29 20:42:41.567458263 +0200
+@@ -46,7 +46,7 @@
+ #include "ems_err.h"
+ #include "msg_par.h"
+ #include "ndf.h"
+-
++#include "cnf.h"
+ 
+ /* Include BAD values */
+ #include "img.h"
+@@ -4665,7 +4665,8 @@
+   char * dest_string = NO_INIT
+  PROTOTYPE: $$$
+  CODE:
+-  sv_setpvn((SV*)ST(2), (char *)address, nbytes);
++  char * ptr = cnfCptr(address);
++  sv_setpvn((SV*)ST(2), ptr, nbytes);
+ 
+ # This routine copies a (usually packed) perl string into a 
+ # memory location
+@@ -4678,7 +4679,7 @@
+  PROTOTYPE: $$$
+  CODE:
+   char * dest;
+-  dest = (void *) address;
++  dest = cnfCptr(address);
+   memmove(dest, input_string, nbytes);
+ 
+ # This routines copies a perl array (or PDL) into a pointer
