@@ -13,6 +13,7 @@ Group:		Development/Languages/Perl
 Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/starperl/starperl.tar.Z
 # Source0-md5:	33dda278be4474cf737be6a8b702a04a
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-types.patch
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_STARPERL.html
 # standalone NDF, GSD, Astro-SLA modules at:
 #   http://www.jach.hawaii.edu/JACpublic/JCMT/software/perl/
@@ -158,7 +159,8 @@ tar xf %{nStarlink}.tar
 tar xf %{nGSD}.tar
 tar xf %{nSLA}.tar
 
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 R=`pwd`
