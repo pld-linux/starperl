@@ -1,13 +1,17 @@
 #
 # Conditional build:
 %bcond_without	tests	# don't perform "make test"
+%bcond_without	nbs	# don't build Starlink package (requires starlink-nbs)
 #
+%ifarch alpha amd64 ia64 ppc64 s390x sparc64
+%undefine	with_nbs
+%endif
 %include	/usr/lib/rpm/macros.perl
 Summary:	STARPERL - Starlink Perl modules
 Summary(pl):	STARPERL - modu³y Perla z projektu Starlink
 Name:		starperl
 Version:	1.4.218
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/starperl/starperl.tar.Z
@@ -28,7 +32,7 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sed >= 4.0
 BuildRequires:	starlink-gsd-devel
 BuildRequires:	starlink-img-devel
-BuildRequires:	starlink-nbs-devel
+%{?with_nbs:BuildRequires:	starlink-nbs-devel}
 BuildRequires:	starlink-ndf-devel
 BuildRequires:	starlink-sae-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -180,6 +184,7 @@ PATH="$PATH:%{stardir}/bin" \
 %{__make}
 %{?with_tests:%{__make} test}
 
+%if %{with nbs}
 cd ../%{nStarlink}
 PATH="$PATH:%{stardir}/bin" \
 %{__perl} -I"${R}/%{nConfig}/blib/lib" Makefile.PL \
@@ -190,6 +195,7 @@ PATH="$PATH:%{stardir}/bin" \
 PATH="$PATH:%{stardir}/bin" \
 %{__make} test \
 	PERL5LIB="${R}/%{nConfig}/blib/lib:${R}/%{nNDF}/blib/lib:${R}/%{nNDF}/blib/arch"
+%endif
 %endif
 
 cd ../%{nGSD}
@@ -217,13 +223,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install -C %{nNDF} \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%if %{with nbs}
 %{__make} install -C %{nStarlink} \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__make} install -C %{nGSD} \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__make} install -C %{nSLA} \
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f %{nStarlink}/ADAM/ChangeLog %{nStarlink}/ChangeLog.ADAM
@@ -231,6 +232,13 @@ mv -f %{nStarlink}/AMS/Core/ChangeLog %{nStarlink}/ChangeLog.AMS-Core
 mv -f %{nStarlink}/AMS/Init/ChangeLog %{nStarlink}/ChangeLog.AMS-Init
 mv -f %{nStarlink}/AMS/Task/ChangeLog %{nStarlink}/ChangeLog.AMS-Task
 mv -f %{nStarlink}/NBS/ChangeLog %{nStarlink}/ChangeLog.NBS
+%endif
+
+%{__make} install -C %{nGSD} \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install -C %{nSLA} \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -251,6 +259,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{perl_vendorarch}/auto/NDF/NDF.so
 %{_mandir}/man3/NDF.3*
 
+%if %{with nbs}
 %files -n perl-Starlink
 %defattr(644,root,root,755)
 %doc %{nStarlink}/{starperl.news,ChangeLog*}
@@ -272,6 +281,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{perl_vendorarch}/auto/Starlink/NBS/NBS.so
 %{_mandir}/man1/starversion.1*
 %{_mandir}/man3/Starlink::[!C]*.3*
+%endif
 
 %files -n perl-GSD
 %defattr(644,root,root,755)
