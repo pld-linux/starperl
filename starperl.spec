@@ -7,7 +7,7 @@ Summary:	STARPERL - Starlink Perl modules
 Summary(pl):	STARPERL - modu³y Perla z projektu Starlink
 Name:		starperl
 Version:	1.4.218
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/starperl/starperl.tar.Z
