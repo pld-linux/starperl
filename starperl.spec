@@ -3,7 +3,7 @@
 %bcond_without	tests	# don't perform "make test"
 %bcond_without	nbs	# don't build Starlink package (requires starlink-nbs)
 #
-%ifarch alpha amd64 ia64 ppc64 s390x sparc64
+%ifarch %{x8664} alpha ia64 ppc64 s390x sparc64
 %undefine	with_nbs
 %endif
 %include	/usr/lib/rpm/macros.perl
@@ -29,6 +29,7 @@ BuildRequires:	perl-PDL
 BuildRequires:	perl-Proc-Simple >= 1.13
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.213
 BuildRequires:	sed >= 4.0
 BuildRequires:	starlink-gsd-devel
 BuildRequires:	starlink-img-devel
