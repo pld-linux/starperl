@@ -79,7 +79,7 @@ system. It is intended to simplify the building of Perl modules based
 on Starlink libraries and allows for this information to be placed in
 a single place rather than in every single Starlink module.
 
-%description -n perl-Starlink-Config
+%description -n perl-Starlink-Config -l pl
 Ten pakiet zawiera informacje o po³o¿eniu oprogramowania Starlink w
 systemie. Ma za zadanie upro¶ciæ budowanie modu³ów Perla opartych na
 bibliotekach Starlinka i pozwala na umieszczenie tych informacji w
