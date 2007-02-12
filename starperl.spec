@@ -8,7 +8,7 @@
 %endif
 %include	/usr/lib/rpm/macros.perl
 Summary:	STARPERL - Starlink Perl modules
-Summary(pl.UTF-8):   STARPERL - moduły Perla z projektu Starlink
+Summary(pl.UTF-8):	STARPERL - moduły Perla z projektu Starlink
 Name:		starperl
 Version:	1.4.218
 Release:	4
@@ -68,7 +68,7 @@ odczytu plików z danymi w formatach NDF, HDS i GSD.
 
 %package -n perl-Starlink-Config
 Summary:	Starlink::Config - retrieve local Starlink configuration
-Summary(pl.UTF-8):   Starlink::Config - uzyskiwanie lokalnej konfiguracji Starlinka
+Summary(pl.UTF-8):	Starlink::Config - uzyskiwanie lokalnej konfiguracji Starlinka
 Group:		Development/Languages/Perl
 Version:	%{ver_Config}
 Requires:	starlink-sae
@@ -87,7 +87,7 @@ jednym miejscu, zamiast w każdym module Starlinka osobno.
 
 %package -n perl-NDF
 Summary:	NDFPERL - accessing Starlink N-dimensional data structures (NDFs) from Perl
-Summary(pl.UTF-8):   NDFPERL - dostęp do wielowymiarowych struktur danych (Starlink NDF) z poziomu Perla
+Summary(pl.UTF-8):	NDFPERL - dostęp do wielowymiarowych struktur danych (Starlink NDF) z poziomu Perla
 Version:	%{ver_NDF}
 # "same as perl" (i.e. GPL or Artistic), but NDF is GPLed...
 License:	GPL
@@ -106,7 +106,7 @@ hierarchicznych struktur danych (HDS).
 
 %package -n perl-Starlink
 Summary:	Starlink Perl modules - interface to Starlink libraries
-Summary(pl.UTF-8):   Moduły Perla Starlink - interfejs do bibliotek Starlink
+Summary(pl.UTF-8):	Moduły Perla Starlink - interfejs do bibliotek Starlink
 Group:		Development/Languages/Perl
 Version:	%{ver_Starlink}
 Requires:	perl-NDF = %{ver_NDF}-%{release}
@@ -125,7 +125,7 @@ komunikatów ADAM i systemu powiadamiania NBS.
 
 %package -n perl-GSD
 Summary:	GSD Perl module - read access to JMCT GSD data
-Summary(pl.UTF-8):   Moduł Perla GSD - umożliwiający odczyt danych GSD z JMCT
+Summary(pl.UTF-8):	Moduł Perla GSD - umożliwiający odczyt danych GSD z JMCT
 Group:		Development/Languages/Perl
 Version:	%{ver_GSD}
 
@@ -143,7 +143,7 @@ globalnej). Ten moduł daje dostęp tylko do odczytu do danych JCMT.
 
 %package -n perl-Astro-SLA
 Summary:	Astro::SLA - Perl interface to SLAlib positional astronomy library
-Summary(pl.UTF-8):   Astro::SLA - perlowy interfejs do biblioteki astronomii pozycyjnej SLAlib
+Summary(pl.UTF-8):	Astro::SLA - perlowy interfejs do biblioteki astronomii pozycyjnej SLAlib
 Group:		Development/Languages/Perl
 Version:	%{ver_SLA}
 
