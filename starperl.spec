@@ -8,7 +8,7 @@
 %endif
 %include	/usr/lib/rpm/macros.perl
 Summary:	STARPERL - Starlink Perl modules
-Summary(pl):	STARPERL - modu³y Perla z projektu Starlink
+Summary(pl.UTF-8):   STARPERL - moduÅ‚y Perla z projektu Starlink
 Name:		starperl
 Version:	1.4.218
 Release:	4
@@ -59,16 +59,16 @@ system. Additional modules are provided to determine version numbers
 of installed Starlink packages and to read NDF, HDS and GSD format
 data files.
 
-%description -l pl
-Pakiet StarPerl to zbiór modu³ów Perla daj±cych dostêp do bibliotek z
-infrastruktury Starlink. Aktualnie dostêpne s± interfejsy do systemu
-komunikatów ADAM i systemu powiadamiania NBS. Do³±czone s± dodatkowe
-modu³y do okre¶lania wersji zainstalowanych pakietów Starlinka oraz do
-odczytu plików z danymi w formatach NDF, HDS i GSD.
+%description -l pl.UTF-8
+Pakiet StarPerl to zbiÃ³r moduÅ‚Ã³w Perla dajÄ…cych dostÄ™p do bibliotek z
+infrastruktury Starlink. Aktualnie dostÄ™pne sÄ… interfejsy do systemu
+komunikatÃ³w ADAM i systemu powiadamiania NBS. DoÅ‚Ä…czone sÄ… dodatkowe
+moduÅ‚y do okreÅ›lania wersji zainstalowanych pakietÃ³w Starlinka oraz do
+odczytu plikÃ³w z danymi w formatach NDF, HDS i GSD.
 
 %package -n perl-Starlink-Config
 Summary:	Starlink::Config - retrieve local Starlink configuration
-Summary(pl):	Starlink::Config - uzyskiwanie lokalnej konfiguracji Starlinka
+Summary(pl.UTF-8):   Starlink::Config - uzyskiwanie lokalnej konfiguracji Starlinka
 Group:		Development/Languages/Perl
 Version:	%{ver_Config}
 Requires:	starlink-sae
@@ -79,15 +79,15 @@ system. It is intended to simplify the building of Perl modules based
 on Starlink libraries and allows for this information to be placed in
 a single place rather than in every single Starlink module.
 
-%description -n perl-Starlink-Config -l pl
-Ten pakiet zawiera informacje o po³o¿eniu oprogramowania Starlink w
-systemie. Ma za zadanie upro¶ciæ budowanie modu³ów Perla opartych na
+%description -n perl-Starlink-Config -l pl.UTF-8
+Ten pakiet zawiera informacje o poÅ‚oÅ¼eniu oprogramowania Starlink w
+systemie. Ma za zadanie uproÅ›ciÄ‡ budowanie moduÅ‚Ã³w Perla opartych na
 bibliotekach Starlinka i pozwala na umieszczenie tych informacji w
-jednym miejscu, zamiast w ka¿dym module Starlinka osobno.
+jednym miejscu, zamiast w kaÅ¼dym module Starlinka osobno.
 
 %package -n perl-NDF
 Summary:	NDFPERL - accessing Starlink N-dimensional data structures (NDFs) from Perl
-Summary(pl):	NDFPERL - dostêp do wielowymiarowych struktur danych (Starlink NDF) z poziomu Perla
+Summary(pl.UTF-8):   NDFPERL - dostÄ™p do wielowymiarowych struktur danych (Starlink NDF) z poziomu Perla
 Version:	%{ver_NDF}
 # "same as perl" (i.e. GPL or Artistic), but NDF is GPLed...
 License:	GPL
@@ -98,15 +98,15 @@ This module gives access to the Starlink extensible N-dimensional data
 format (NDF) and related error and message handling routines. Basic
 hierarchical data structure (HDS) access routines are also supplied.
 
-%description -n perl-NDF -l pl
-Ten modu³ daje dostêp do rozszerzalnego formutu wielowymiarowych
-danych (Starlink NDF) oraz zwi±zanych z nim funkcji obs³ugi b³êdów i
-komunikatów. Za³±czone s± tak¿e funkcje do dostêpu do podstawowych
+%description -n perl-NDF -l pl.UTF-8
+Ten moduÅ‚ daje dostÄ™p do rozszerzalnego formutu wielowymiarowych
+danych (Starlink NDF) oraz zwiÄ…zanych z nim funkcji obsÅ‚ugi bÅ‚Ä™dÃ³w i
+komunikatÃ³w. ZaÅ‚Ä…czone sÄ… takÅ¼e funkcje do dostÄ™pu do podstawowych
 hierarchicznych struktur danych (HDS).
 
 %package -n perl-Starlink
 Summary:	Starlink Perl modules - interface to Starlink libraries
-Summary(pl):	Modu³y Perla Starlink - interfejs do bibliotek Starlink
+Summary(pl.UTF-8):   ModuÅ‚y Perla Starlink - interfejs do bibliotek Starlink
 Group:		Development/Languages/Perl
 Version:	%{ver_Starlink}
 Requires:	perl-NDF = %{ver_NDF}-%{release}
@@ -118,14 +118,14 @@ access to Starlink infrastructure libraries. Currently, interfaces are
 provided to the ADAM messaging system, the Starlink Noticeboard
 system.
 
-%description -n perl-Starlink -l pl
-Pakiet StarPerl to zbiór modu³ów Perla daj±cych dostêp do bibliotek z
-infrastruktury Starlink. Aktualnie dostêpne s± interfejsy do systemu
-komunikatów ADAM i systemu powiadamiania NBS.
+%description -n perl-Starlink -l pl.UTF-8
+Pakiet StarPerl to zbiÃ³r moduÅ‚Ã³w Perla dajÄ…cych dostÄ™p do bibliotek z
+infrastruktury Starlink. Aktualnie dostÄ™pne sÄ… interfejsy do systemu
+komunikatÃ³w ADAM i systemu powiadamiania NBS.
 
 %package -n perl-GSD
 Summary:	GSD Perl module - read access to JMCT GSD data
-Summary(pl):	Modu³ Perla GSD - umo¿liwiaj±cy odczyt danych GSD z JMCT
+Summary(pl.UTF-8):   ModuÅ‚ Perla GSD - umoÅ¼liwiajÄ…cy odczyt danych GSD z JMCT
 Group:		Development/Languages/Perl
 Version:	%{ver_GSD}
 
@@ -135,15 +135,15 @@ in-house format for storing spectral line and UKT14 continuum data.
 This format is called the Global Section Data format (GSD). This
 module gives read only access to JCMT data.
 
-%description -n perl-GSD -l pl
+%description -n perl-GSD -l pl.UTF-8
 Teleskop JCMT (James Clerk Maxwell Telescope) w Mauna Kea na Hawajach
-u¿ywa w³asnego formatu do zapisu linii widm i danych continuum UKT14.
+uÅ¼ywa wÅ‚asnego formatu do zapisu linii widm i danych continuum UKT14.
 Ten format jest nazywany GSD (Global Section Data - dane sekcji
-globalnej). Ten modu³ daje dostêp tylko do odczytu do danych JCMT.
+globalnej). Ten moduÅ‚ daje dostÄ™p tylko do odczytu do danych JCMT.
 
 %package -n perl-Astro-SLA
 Summary:	Astro::SLA - Perl interface to SLAlib positional astronomy library
-Summary(pl):	Astro::SLA - perlowy interfejs do biblioteki astronomii pozycyjnej SLAlib
+Summary(pl.UTF-8):   Astro::SLA - perlowy interfejs do biblioteki astronomii pozycyjnej SLAlib
 Group:		Development/Languages/Perl
 Version:	%{ver_SLA}
 
@@ -151,8 +151,8 @@ Version:	%{ver_SLA}
 This modules provides a Perl interface to either the C or Fortran
 versions of the SLALIB astrometry library written by Pat Wallace.
 
-%description -n perl-Astro-SLA -l pl
-Ten modu³ udostêpnia perlowy interfejs do wersji C lub fortranowej
+%description -n perl-Astro-SLA -l pl.UTF-8
+Ten moduÅ‚ udostÄ™pnia perlowy interfejs do wersji C lub fortranowej
 biblioteki astronometrycznej SLALIB napisanej przez Pata Wallace'a.
 
 %prep
