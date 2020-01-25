@@ -6,7 +6,6 @@
 %ifarch %{x8664} alpha ia64 ppc64 s390x sparc64
 %undefine	with_nbs
 %endif
-%include	/usr/lib/rpm/macros.perl
 Summary:	STARPERL - Starlink Perl modules
 Summary(pl.UTF-8):	STARPERL - moduły Perla z projektu Starlink
 Name:		starperl
